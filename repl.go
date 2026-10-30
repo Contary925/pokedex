@@ -28,7 +28,7 @@ func REPL(conf *config) {
 			fmt.Println("Unknown command")
 			continue
 		}
-		err := res.callback(conf)
+		err := res.callback(conf, response_split[1:]...)
 		if err != nil {
 			fmt.Printf("Command '%s' failed with error: %s\n", command, err)
 		}
